@@ -1,0 +1,430 @@
+html{
+    background-color: black;
+    display:flex;
+    justify-content: center;
+}
+
+body{
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.theme{
+    color: greenyellow;
+    text-shadow: 4px 3px 4px #9b6641;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#myPane_mode_select{
+    box-shadow: 1px 2px 9px 7px greenyellow,0 6px 2px 0 white;
+    cursor: pointer;
+    margin-left: 5rem;
+    background-color: white;
+    font-family: "Luckiest Guy", cursive;
+    /* width: 60%; */
+    border-radius: 10px;
+    padding: 3rem 3rem;
+    position: fixed; /* Positions it relative to the viewport */
+
+    top: 30%;
+    /* left: 50%;  */
+
+    /* Defines the transition: change opacity over 0.5 seconds */
+    transition: opacity 0.5s ease-in-out, visibility 0.9s;
+
+    z-index: 1000;
+}
+
+.hidePane{
+   opacity: 0;
+    /* Keeps it from being clickable while invisible */
+    visibility: hidden;
+}
+
+.showPane{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modes{
+    background-color: greenyellow;
+    border-color: #9b6641;
+}
+
+#close_pane{
+    background-color: #9b6641;
+    border-color: greenyellow;
+}
+
+.modes, #close_pane{
+    font-family: "Luckiest Guy", cursive;
+ 
+    /* 3. (Optional) Add a slight shadow for depth */
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+
+    font-size: 1.7rem;
+    padding: 10px;
+    color: white;
+    /* border: none; */
+    border-style: none;
+    border-radius: 8px;
+        /* Set a smooth transition for the transform property over 0.3 seconds */
+    transition: transform 0.3s ease-in-out;
+    
+    /* Good practice to include vendor prefixes for broader compatibility 
+       - Not always strictly necessary now, but safer for older browsers */
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+}
+
+.modes:hover, #close_pane:hover{
+     transform: translateY(-3px);
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); */
+    transform: scale(1.1); 
+    
+    /* Vendor prefix */
+    -webkit-transform: scale(1.1);
+    z-index: 10;
+
+    /* Define a subtle, soft shadow */
+    box-shadow: 0 4px 10px 0 #9b6641, 0 6px 20px 0 white;
+}
+
+#close_pane:hover{
+    /* Define a subtle, soft shadow */
+    box-shadow: 0 4px 10px 0 greenyellow, 0 6px 20px 0 white;
+}
+
+#mode-select{
+    display: flex;
+    flex-direction: column;
+    gap:6.8rem;
+    padding-top: 13.8rem;
+    justify-content: space-between;  
+    margin-bottom: 7.5rem;
+    /* border: 3px solid white; */
+}
+
+#play_button{
+    background-color: white;
+    /* border: 2px solid red; */
+    border-radius: 30px;
+    margin: auto;
+    /* margin-top: 1rem; */
+    /* margin-bottom: 3.2rem; */
+    width: 50%; 
+
+    /* background-color: gray; */
+    /* Set a smooth transition for the transform property over 0.3 seconds */
+    transition: transform 0.3s ease-in-out;
+    
+    /* Good practice to include vendor prefixes for broader compatibility 
+       - Not always strictly necessary now, but safer for older browsers */
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+}
+
+#play_button:hover{
+
+    transform: translateY(-3px);
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); */
+    transform: scale(1.1); 
+    
+    /* Vendor prefix */
+    -webkit-transform: scale(1.1);
+    z-index: 10;
+
+    /* Define a subtle, soft shadow */
+    box-shadow: 0 4px 10px 0 #9b6641, 0 6px 20px 0 white;
+    
+    /* Optional: Add a subtle border-radius to soften the edges */
+    border-radius: 30px;
+}
+
+#setting_button{
+    cursor: pointer;
+}
+
+.choices{
+    padding: 1rem;
+    height: 8rem;
+    display: flex;
+    gap: 4rem;;
+    justify-content: space-evenly;
+}
+
+#single-result, #multi-result{
+    font-family: poppins;
+    font-size: 2rem;
+    padding: 0 20px 0 20px;
+    color: white;
+}
+
+section > h3 {
+    color: white;
+}
+
+.dropbtn {
+    position: absolute;
+    top:1px;
+    left: 12%;
+    color: white;
+    height: 4rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+    
+    /* Good practice to include vendor prefixes for broader compatibility 
+       - Not always strictly necessary now, but safer for older browsers */
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    /* z-index: 20; */
+}
+
+.dropbtn:hover{
+    transform: translateY(-3px);
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); */
+    transform: scale(1.1); 
+    
+    /* Vendor prefix */
+    -webkit-transform: scale(1.1);
+    z-index: 10;
+
+    /* Define a subtle, soft shadow */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 white; */
+    /* box-shadow: 0 0 10px 4px white; */
+    
+    /* Optional: Add a subtle border-radius to soften the edges */
+    /* border-radius: 10rem; */
+}
+
+.dropdown {
+    /* border: 3px solid white; */
+    /* margin-top: 5rem; */
+    /* margin-bottom: 5rem; */
+    /* Key: Establishes the positioning context for the absolute tray */
+    position: relative; 
+    display: block;
+    /* border: 3px solid red; */
+}
+
+/* * 2. Style the Tray Content (The actual menu)
+ */
+.dropdown-content {
+    background-color: #9b6641;
+    /* Initially hidden */
+    display: none; 
+    
+    /* Position relative to the .dropdown wrapper */
+    position: absolute; 
+    
+    /* --- KEY FOR UPWARD DIRECTION --- */
+    /* Position the bottom of the tray at the top edge (100% up) of the button */
+    bottom: 100%; 
+    top: au1o; /* Ensure 'top' doesn't interfere */
+    /* -------------------------------- */
+    
+    /* Horizontal alignment (Aligns the left edge of the tray with the left edge of the button) */
+    left: 10%;   
+    /* Appearance */
+    /* min-width: 180px;  */
+    /* background-color: #fff; */
+    /* border: 1px solid #ccc; */
+    box-shadow: -6px -2px 50px white; /* Shadow pointing up */
+    border-radius: 20px; /* Rounded corners only on the top */
+    z-index: 10;
+}
+
+/* Style the images within the tray */
+.dropdown-content img {
+    height: 3rem;
+    padding: 10px 16px;
+    /* display: block; 
+    text-align: left; */
+    transition: background-color 0.2s;
+}
+
+/* Hover effect for menu items */
+.dropdown-content img:hover {
+    /* background-color: #f0f0f0; */
+     transform: translateY(-3px);
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); */
+    transform: scale(1.1); 
+    
+    /* Vendor prefix */
+    -webkit-transform: scale(1.1);
+    z-index: 10;
+}
+
+/* * 3. Visibility Trigger 
+ */
+.dropdown:hover .dropdown-content {
+    /* Key: Make the tray visible when hovering over the wrapper */
+    display: block; 
+}
+
+#single-player{
+    display: none;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    border-top: 4px solid greenyellow;
+    border-bottom: 3px solid greenyellow;
+}
+
+h2.theme{
+    font-size: 3.0rem;
+}
+
+.options{
+    height: 60%;
+    border: 6px solid white;
+    background-color: #9b6641;
+    padding: 1rem;
+    border-radius: 5px;
+     /* Set a smooth transition for the transform property over 0.3 seconds */
+    transition: transform 0.3s ease-in-out;
+    
+    /* Good practice to include vendor prefixes for broader compatibility 
+       - Not always strictly necessary now, but safer for older browsers */
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+}
+
+.options:hover{
+    border-color: greenyellow;
+    transform: scale(2.1); 
+    -webkit-transform: scale(2.1);
+    z-index: 10;
+}
+
+.volcano{
+    opacity: 0.1;
+    height: 3rem;
+    border: 6px solid orangered;
+    background-color: grey;
+    padding: 1rem;
+    border-radius: 5px;
+    position: absolute;
+}
+
+@keyframes fadeGrow {
+  0% {
+    display: block;
+    opacity: 0.2;
+    transform: scale(0.5);
+    z-index: 10000;
+  }
+  20% {
+    opacity: 0.4;
+    transform: scale(1.0);
+    z-index: 10000;
+
+  }40% {
+    opacity: 0.6;
+    transform: scale(1.5);
+    z-index: 10000;
+
+  }60% {
+    opacity: 0.8;
+    transform: scale(2.0);
+    z-index: 10000;
+
+  }80% {
+    opacity: 1;
+    transform: scale(2.5);
+    z-index: 10000;
+
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    display: none;
+    
+  }
+}
+
+.fade-grow {
+  animation: fadeGrow 2s ease-in-out forwards;
+}
+
+
+.p1_choices, .p2_choices{
+    display:flex;
+    gap: 9px;
+    justify-content: space-between;
+    padding: 0 3rem 1rem 1rem;
+    height: 5.25rem;
+}
+
+#choice_container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.back-btn{
+    text-align: center;
+    background-color: #9b6641;
+    width: 80%;
+    border-radius: 10px;
+    margin-top:-1rem;
+    display: inline-block;
+}
+
+.back-btn:hover{
+    font-size: 6rem;
+    text-shadow: 1px 1px 1px white;
+    transform: translateY(-3px);
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); */
+    transform: scale(2.1); 
+    
+    /* Vendor prefix */
+    -webkit-transform: scale(1.1);
+    z-index: 10;
+    cursor: pointer;
+}
+
+#multi-player{
+    /* display: none; */
+    flex-direction: column;
+    gap: 2.1rem;
+    align-items: center;
+    border-top: 3px solid greenyellow;
+    border-bottom: 4px solid greenyellow;
+    transition: opacity 2s ease;
+}
+
+.show{
+    opacity: 1;
+}
+
+#p1_name, #p2_name{
+    font-family: "Luckiest Guy", cursive;
+    display: inline-block;
+    color: white;
+}
+
+.scoreboard{
+    margin-top: 2rem;
+}
+
+.scores{
+    padding: 0 3rem;
+}
+
+.scores > output{
+    padding: 1rem;
+    border: 5px ridge greenyellow;
+    border-radius: 5px;
+}
+
+.mp_p1_score, .mp_p2_score{
+    color: white;
+    font-family: poppins;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+}
