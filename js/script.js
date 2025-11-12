@@ -1,5 +1,5 @@
 
-            alert("Working Script");
+            // alert("Working Script");
 
                 // All three Modes
                 let singlePlayerSection = document.getElementById("single-player");
